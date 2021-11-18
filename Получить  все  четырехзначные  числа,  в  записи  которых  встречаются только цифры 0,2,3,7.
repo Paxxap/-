@@ -1,0 +1,13 @@
+<?php 
+for ($i = 1000; $i < 10000; $i++)
+{
+	$unit = floor(($i % 100) % 10);
+	$tenths = floor(($i % 100) / 10);
+	$hundredths = floor(($i % 1000) / 100);
+	$thousandth = floor($i / 1000);
+	if (($unit == 2 || $unit == 3 || $unit == 0 || $unit == 7) && ($tenths == 2 || $tenths == 3 || $tenths == 0 || $tenths == 7) && ($hundredths == 2 || $hundredths == 3 || $hundredths == 0 || $hundredths == 7) && ($thousandth == 2 || $thousandth == 3 || $thousandth == 0 || $thousandth == 7) )
+	{		
+			echo $i."\n";	
+	}
+}
+?>
