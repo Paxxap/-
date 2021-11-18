@@ -1,0 +1,11 @@
+<?php
+$number = 13;
+for ($i=1000; $i<10000; $i++)
+{
+	if (floor($i/1000) + floor(($i % 1000) / 100) + floor(($i % 100) / 10) + floor(($i % 100) % 10) == $number)
+		{
+		echo $i."\n" ;
+		}
+}
+
+?>
