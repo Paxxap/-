@@ -1,0 +1,16 @@
+<?php 
+$number = 2365;
+
+$unit = floor(($number % 100) % 10);
+$tenths = floor(($number % 100) / 10);
+$hundredths = floor(($number % 1000) / 100);
+$thousandth = floor($number / 1000);
+
+if ($thousandth < $hundredths && $hundredths < $tenths && $tenths < $unit)
+{
+	echo "цифры данного натурального числа $number образуют возрастающую последовательность";
+}
+else {
+	echo "цифры данного натурального числа $number НЕ образуют возрастающую последовательность";
+}
+?>
