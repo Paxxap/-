@@ -1,0 +1,15 @@
+<?php
+$number = 2365;
+$unit = floor(($number % 100) % 10);
+$tenths = floor(($number % 100) / 10);
+$hundredths = floor(($number % 1000) / 100);
+$thousandth = floor($number / 1000);
+
+$count = 0;
+if($thousandth < 5) $count++;
+if($hundreths < 5) $count++;
+if($tenths < 5) $count++;
+if($unit < 5) $count++;
+
+echo "При натуральном числе: $number количество цифр, меньших 5 составляет - $count";
+?>
