@@ -1,0 +1,15 @@
+<?php 
+$number = 2765;
+
+$unit = floor(($number % 100) % 10);
+$tenths = floor(($number % 100) / 10);
+$hundredths = floor(($number % 1000) / 100);
+$thousandth = floor($number / 1000);
+
+if (($unit == $tenths || $unit == $hundredths || $unit == $thousandth) or ($tenths == $unit || $tenths == $hundredths || $tenths == $thousandth) or ($hundredths == $unit || $tenths == $hundredths || $hundredths == $thousandth) or ($thousandth == $unit || $tenths == $thousandth || $hundredths == $thousandth))
+{ 
+	echo "В числе $number есть повторяющиеся цифры";
+}else {
+	echo "В числе $number нет повторяющихся цифр";
+}
+?>
