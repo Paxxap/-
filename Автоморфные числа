@@ -1,0 +1,17 @@
+<?
+$number = 25; 
+$square_number = $number**2;
+
+$unit = floor($number % 10);
+$tenths = floor($number / 10);
+
+$square_unit = floor(($square_number % 100) % 10);
+$square_tenths = floor(($square_number % 100) / 10);
+
+if ($unit == $square_unit && $tenths == $square_tenths)
+{
+	echo "Число $number является автоморфным";
+}else {
+	echo "Число $number не является автоморфным";
+}
+?>
