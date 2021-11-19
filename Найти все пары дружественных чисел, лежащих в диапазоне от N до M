@@ -1,0 +1,32 @@
+<?php
+$N = 13;
+$M = 1500;
+$used = 0;
+for ($i = $N; $i <= $M; $i++)
+{
+	$amount = 0;
+	for ($j = 1; $j <= $i/2; $j++)
+	{
+	 	if($i % $j == 0)
+	 	{
+	 		$amount+=$j;
+	 	}
+	}
+	if ($amount != 0 && $amount > $N && $amount < $M)
+	{
+		$amount2 = 0;
+		for ($j = 1; $j <= $amount/2; $j++)
+		{
+	 		if($amount % $j == 0)
+	 		{
+	 			$amount2+=$j;
+	 		}
+		}
+		if ($i == $amount2 && $amount != $amount2 && $i != $used)
+		{
+			echo "Пара дружественных чисел: $amount $i";
+			$used = $amount;
+		}
+	}
+}
+?>
