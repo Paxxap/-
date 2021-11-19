@@ -1,0 +1,24 @@
+<?php
+function NOD($a, $b)
+{
+	while(1)
+	{
+		if ($a == $b)
+		{
+			return $b;
+		}
+		if ($a < $b)
+		{
+			$b -= $a;
+		}else {
+			$a -= $b;
+		}
+	}
+}
+
+$N = 84;
+$M = 90;
+
+
+echo "Наибольший общий делитель ".NOD($N, $M)
+?>
