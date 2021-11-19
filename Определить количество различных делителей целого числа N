@@ -1,0 +1,11 @@
+$number = 15;
+$amount = 0;
+for ($i = 1; $i <= $number/2; $i++)
+{
+ 	if($number % $i == 0)
+ 	{
+ 		$amount++;
+ 	}
+}
+$amount++;
+echo "Количество делителей $number = $amount";
