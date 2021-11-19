@@ -1,0 +1,45 @@
+function parity($k)
+{
+	$s = 0; 
+	while ($k>=1)
+	{
+		$k/=10;
+		$s++;
+	}
+	return $s;
+}
+function half($num)
+{
+	$temp = 0;
+	$answer  = true;
+	$reverse = 0;
+	$original = $num;
+	while ($num >= 1)
+	{
+		$temp = $num % 10;
+		$reverse = $reverse * 10 + $temp;
+		$num /= 10;
+		if ($original != $reverse)
+		{
+			return $answer;
+		}
+	}
+	$answer = false;
+	return $answer;
+}
+
+$num = 1221; 
+
+	$result = parity($num);
+	if ($result % 2 == 0)
+	{
+		if (half($num) == true)
+		{
+			echo "Число $num симметрично";
+		}else {
+			echo "Число $num не симметрично";
+		}
+	}else 
+	{
+		echo "Число не имеет четное количество цифр";
+	}
