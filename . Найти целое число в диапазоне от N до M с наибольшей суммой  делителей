@@ -1,0 +1,36 @@
+<?php
+
+$N = 28;
+$M =12; 
+$max_sum = 0;
+$max_num = 0;
+
+if ($N < $M) 
+    {
+       $a=$N;
+       $b=$M; 
+    }
+else
+    {
+       $a=$M;
+       $b=$N;  
+    }
+
+for ($i=$a; $i<=$b; $i++)
+{
+	$new_max_sum = $i;
+	for ($j = 1; $j <= $i/2; $j++)
+	{	
+		if ($i % $j == 0)
+	    {	
+	       $new_max_sum += $j;
+	    }
+	}
+	if ($new_max_sum > $max_sum)
+	{
+		$max_sum = $new_max_sum;
+		$max_num = $i;
+	}
+} 
+echo "В диапазоне от N до M число $max_num имеет максимальную сумму делителей - $max_sum";
+?>
