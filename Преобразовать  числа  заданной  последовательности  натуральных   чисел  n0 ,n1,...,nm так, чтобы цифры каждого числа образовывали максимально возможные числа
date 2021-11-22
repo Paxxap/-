@@ -1,0 +1,27 @@
+<?php
+$N = 279; 
+$M = 350;
+$max_sum = 0; 
+$max_num = 0;
+$div = 0;
+for ($i = $N; $i <= $M; $i++)
+{
+	$sort_i = 0;
+	for ($j = 9; $j >= 0; $j--)
+	{
+		$tmp = $i;
+		while ($tmp >= 1)
+		{
+			$digit = $tmp % 10; 
+			if ($digit == $j)
+			{
+				$sort_i *= 10;
+				$sort_i += $digit;
+			}
+			$tmp /= 10;
+		}
+	}
+	echo "$i -> $sort_i"."<br>";
+}
+
+?>
