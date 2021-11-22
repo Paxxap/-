@@ -1,0 +1,41 @@
+<?php
+$num = 707;
+$bin_num = $num;
+$bin_result = '';
+$hexadecimal_num = $num;
+$hexadecimal_result = '';
+while ($bin_num >= 1)
+{
+	$bin_res = $bin_num%2;
+	$bin_result .= "$bin_res";
+	$bin_num/=2;
+}
+$bin = strrev($bin_result);
+echo "$bin - $num в двоичной системе счисления"."<br>";
+while ($hexadecimal_num >= 1)
+{
+	if ($hexadecimal_num%16 == 10) {
+		$hexadecimal_result .= "A"; $hexadecimal_num/= 16; continue;
+	}
+	if ($hexadecimal_num%16 == 11) {
+		$hexadecimal_result .= "B"; $hexadecimal_num/= 16; continue;
+	}
+	if ($hexadecimal_num%16 == 12) {
+		$hexadecimal_result .= "C"; $hexadecimal_num/= 16; continue;
+	}
+	if ($hexadecimal_num%16 == 13) {
+		$hexadecimal_result .= "D"; $hexadecimal_num/= 16; continue;
+	}
+	if ($hexadecimal_num%16 == 14) {
+		$hexadecimal_result .= "E"; $hexadecimal_num/= 16; continue;
+	}
+	if ($hexadecimal_num%16 == 15) {
+		$hexadecimal_result .= "F"; $hexadecimal_num/= 16; continue;
+	}
+	$hexadecimal_res = $hexadecimal_num%16;
+	$hexadecimal_result .= "$hexadecimal_res";
+	$hexadecimal_num/= 16;
+}
+$hex = strrev($hexadecimal_result);
+echo "$hex - $num в шестнадцатеричной системе счисления"."<br>";
+?>
