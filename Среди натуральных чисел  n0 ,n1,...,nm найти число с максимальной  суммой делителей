@@ -1,0 +1,26 @@
+<?php
+$N = 1; 
+$M = 450;
+$max_sum = 0; 
+$max_num = 0;
+$div = 0;
+for ($i = $N; $i <= $M; $i++)
+{
+	$div_sum = 0;
+	for ($j = 1; $j <= $i/2; $j++ )
+	{
+		if ($i % $j == 0)
+		{
+			$div_sum += $j;
+		}
+	}
+	$div_sum += $i;
+	if ($div_sum > $max_sum)
+	{
+		$max_sum = $div_sum;
+		$max_num = $i;
+	}
+}
+echo "Число с наибольшей суммой делителей - $max_num"."<br>";
+echo "Наибольшая сумма делителей - $max_sum";
+?>
