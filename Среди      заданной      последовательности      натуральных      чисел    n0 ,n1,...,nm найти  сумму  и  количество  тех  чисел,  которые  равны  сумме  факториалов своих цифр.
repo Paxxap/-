@@ -1,0 +1,29 @@
+<?php
+$N = 1; 
+$M = 300;
+$sum = 0;
+$amount = 0;
+for ($i = $N; $i <= $M; $i++)
+{
+	$fact_sum = 0;
+	$res = $i;
+	while ($res >= 1)
+	{
+		$num = $res % 10;
+		$fact = 1;
+		for ($j = 1; $j <= $num; $j++)
+		{
+			$fact *= $j;
+		}
+		$res /= 10;
+		$fact_sum += $fact;
+	}
+	if ($fact_sum == $i)
+	{
+		$sum += $i;
+		$amount ++;
+	}
+}
+echo "Количество чисел, равных сумме факториалов своих цифр - $amount"."<br>";
+echo "Сумма чисел, равных сумме факториалов своих цифр - $sum";
+?>
