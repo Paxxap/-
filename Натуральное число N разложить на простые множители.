@@ -1,0 +1,24 @@
+<?php
+$N = 80;
+$a = $N;
+$factor = 0;
+for ($i = 2; $i <= $a; $i++)
+{
+	if (($a % $i) == 0)
+	{
+		$factor = $i;
+		$a /= $i;
+		$i--;
+		if ($factor != 0) 
+		{ 
+			echo "$factor * ";
+			$factor = 0;
+		}
+		if ($a < 2)
+		{
+			break;
+		}
+	}
+}
+echo " - число $N, разложенное на простые множители";
+?>
