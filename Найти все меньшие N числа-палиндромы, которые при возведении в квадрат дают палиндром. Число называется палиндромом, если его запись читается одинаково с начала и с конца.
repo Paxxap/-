@@ -1,0 +1,30 @@
+<? 
+$N = 1000;
+for ($i = 10; $i <= $N; $i++)
+{
+	$original = $i;
+	$reverse = 0;
+	while($original >= 1)
+	{
+		$unit = $original % 10;
+		$reverse = $reverse * 10 + $unit;
+		$original = $original / 10;
+	}
+	if ($i == $reverse)
+	{
+		$square = $reverse ** 2;
+		$square_palindrom = $square;
+		$square_reverse = 0;
+		while ($square_palindrom >= 1)
+		{
+			$unit2 = $square_palindrom % 10;
+			$square_reverse = $square_reverse*10 + $unit2;
+			$square_palindrom /= 10;
+		}
+		if ($square_reverse == $square)
+		{
+			echo"$i\n";
+		}
+	}
+}
+?>
