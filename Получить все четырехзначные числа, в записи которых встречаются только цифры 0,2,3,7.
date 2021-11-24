@@ -1,0 +1,40 @@
+<?php 
+for ($i = 1000; $i < 10000; $i++)
+{
+   $flag = true;
+   $flag2 = true;
+   $flag3 = true;
+   $flag4 = true;
+   $t = $i;
+   $chek = 0;
+   while ($t >= 1)
+   {
+   		$unit = $t % 10;
+   		if ($flag == true && $unit == 0)
+   		{
+   			$chek++;
+   			$flag = false;
+   		}
+   		if ($flag2 == true && $unit == 2)
+   		{
+   			$chek++;
+   			$flag2 = false;
+   		}
+   		if ($flag3 == true && $unit == 3)
+   		{
+   			$chek++;
+   			$flag3 = false;
+   		}
+   		if ($flag4 == true && $unit == 7)
+   		{
+   			$chek++;
+   			$flag4 = false;
+   		}
+   		$t /= 10;
+   }
+   if ($chek == 4)
+   {
+   	echo $i."\n";
+   }
+}
+?>
