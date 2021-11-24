@@ -1,0 +1,25 @@
+<?php 
+$A = array(1, 23, -1, 24, -2, 3, 5, 10);
+$flag = true;
+$flag2 = true;
+$positive = 0;
+$negative = 0;
+print_r($A);
+echo "<br>";
+for ($i = 0; $i <= count($A); $i++)
+{
+	if ($A[$i] > 0 && $flag == true)
+	{
+		$positive = $i;
+		$flag = false;
+	}
+	if ($A[$i] < 0) 
+	{
+		$negative = $i;
+	}
+}
+$chek = $A[$positive];
+$A[$positive] = $A[$negative];
+$A[$negative] = $chek;
+print_r($A);
+?>
