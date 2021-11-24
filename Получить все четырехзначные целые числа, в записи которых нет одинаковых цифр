@@ -1,0 +1,27 @@
+<?php
+for ($i = 1000; $i < 10000; $i++)
+{
+	$t = $i;
+	$chek = true;
+	while($t >= 1)
+	{
+		$num = $t % 10;
+		$t /= 10;
+		$a = $t;
+		while ($a >= 1)
+		{
+			if ($num == $a%10)
+			{
+				$chek = false;
+				$t = 0;
+				break;
+			}
+			$a /= 10;
+		}
+	}
+	if ($chek == true)
+	{
+		echo $i."\n";
+	}
+}
+?>
