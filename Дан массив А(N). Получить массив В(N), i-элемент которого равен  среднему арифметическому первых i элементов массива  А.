@@ -1,0 +1,16 @@
+<?php 
+$A = array(1, 23, -1, 24, -2, 3, 5, 10);
+$B = array();
+for ($i = 0; $i < count($A); $i++)
+{
+	$sum = 0;
+	$amount = 0;
+	for($j = 0; $j <=$i; $j++)
+	{
+		$sum+=$A[$j];
+		$amount ++;
+	}
+	$B[$i] = $sum/$amount;
+}
+print_r($B);
+?>
