@@ -1,0 +1,20 @@
+<?php 
+$N = 625;
+$N2 = $N ** 2;
+$t = $N;
+$discharge = 0;
+while ($t >= 1)
+{
+	$unit = $t % 10;
+	$discharge++;
+	$t /= 10;
+}
+if ($N == $N2 % 10 ** $discharge)
+{
+	echo "$N - автоморфно";
+}
+else 
+{
+	echo "$N - не автоморфно";
+}
+?>
