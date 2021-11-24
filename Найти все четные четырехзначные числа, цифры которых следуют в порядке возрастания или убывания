@@ -1,0 +1,37 @@
+<?php 
+for ($i = 3458; $i < 10000; $i = $i + 2)
+{
+    $flag = 0;
+    $flag2 = 0;
+    $t = $i;
+    $chek = $t % 10;
+    $t /= 10;
+    $pos = true;
+    $pos2 = true;
+	while ($t >= 1)
+	{
+		$unit = $t % 10;
+		if ($unit == $chek) 
+		{
+			break;
+		}
+		if ($unit > $chek && $pos == true) 
+		{
+			$flag++; 
+			$chek = $unit;
+			$pos2 = false;
+		}
+		if ($unit < $chek && $pos2 == true)
+		{
+			$flag2++;
+			$chek = $unit;
+			$pos = false;
+		}
+		$t /= 10;
+	}
+	if ($flag == 3 || $flag2 == 3)
+	{
+	    echo "$i"."\n";
+	}
+}
+?>
