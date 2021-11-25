@@ -1,0 +1,31 @@
+<?php 
+for ($i = 1000; $i < 10000; $i++)
+{
+	$default = 12;
+   	$sum = 0;
+  	$t = $i;
+  	$chek = 0;
+  	$flag = true;
+  	while ($t >= 1)
+  	{
+  		$unit = $t % 10;
+	  	switch ($unit)
+	  	{
+	  		case 0: $chek++; break;
+	  		case 2: $chek++; $sum+= 2; break;
+	  		case 3: $chek++; $sum+= 3; break;
+	  		case 7: $chek++; $sum+= 7; break;
+	  		default: $flag = false; break;
+	  	}
+	  	if ($flag == false)
+	  	{
+	  		break;
+	  	}
+	  	$t /= 10;
+  	}
+   if ($chek == 4 && $sum == 12)
+   {
+   	echo $i."\n";
+   }
+}
+?>
