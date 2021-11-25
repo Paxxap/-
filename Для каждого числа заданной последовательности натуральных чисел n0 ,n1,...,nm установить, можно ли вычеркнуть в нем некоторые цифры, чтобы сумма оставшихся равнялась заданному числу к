@@ -1,0 +1,46 @@
+<?php 
+$N = 1; 
+$M = 1500;
+$k = 12;
+echo "Список чисел, при вычеркивании цифр которых, сумма равна $k : ";
+for ($i = $N; $i <= $M; $i++)
+{
+	$flag = false;
+	$t = $i;
+
+	while ($t >= 1)
+	{
+		$num = $t % 10;
+		$t /= 10;
+		$dec = $t;
+		while ($dec >= 1)
+		{
+			$unit = $dec % 10; 
+			if ($unit + $num == $k)
+			{
+				$flag = true; 
+			}
+			$dec /= 10;
+		}
+	}
+
+	$pos = $i;
+	$chek = 0;
+
+	while ($pos >= 1)
+	{
+		$unit = $pos % 10;
+		$chek += $unit;
+		$pos /= 10;
+	}
+	if ($chek == $k)
+	{
+		$flag = false;
+	}
+
+	if ($flag == true)
+	{
+		echo "$i\n";
+	}
+}
+?>
