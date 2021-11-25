@@ -1,0 +1,36 @@
+<?php
+for ($i = 1000; $i < 10000; $i++)
+{
+	$t = $i;
+	$chek = true;
+	$primal_flag = true;
+	while($t >= 1)
+	{
+		$num = $t % 10;
+		$t /= 10;
+		$a = $t;
+		$flag = true;
+		while ($a >= 1)
+		{
+			if ($num == $a%10)
+			{
+				$chek = false;
+				$t = 0;
+				$flag = false;
+				break;
+			}
+			$a /= 10;
+		}
+		if ($flag == false)
+		{
+		    $primal_flag = false;
+		    break;
+		}
+	}
+	if ($primal_flag == false) { continue; }
+	if ($chek == true)
+	{
+		echo $i."\n";
+	}
+}
+?>
