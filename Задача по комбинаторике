@@ -1,0 +1,72 @@
+<?php
+
+class Combin 
+{
+	private $str; 
+	public $leng;
+
+	function __construct($str, $leng)
+	{
+		$this->str = $str;
+		$this->leng = $leng;
+	}
+	function fact($n)
+	{
+		$factorial = 1; 
+		for ($i = 1; $i <= $n; $i++)
+		{
+			$factorial *= $i;
+		}
+		return $factorial;
+	}
+	function placement ()
+	{
+		$col = strlen($this->str);
+		$place = $this->fact($col) / $this->fact($col - $this->leng);
+		echo "Число размещений - $place<br>";
+		return $place;
+	}
+	function placement_generate($default_str, $size, $combin = array())
+	{
+		if (empty($combin))
+		{
+			$combin = $default_str;
+		}
+		if ($size == 1)
+		{
+			return $combin;
+		}
+
+		$new_combin = array();
+
+		foreach ($combin as $combo_key => $combo)
+		{
+			foreach ($default_str as $char_key => $char)
+			{
+				if ($combo_key != $char_key)
+				{
+					$new_combin[] = $combo.$char;
+				}
+			}
+		}
+		return $this->placement_generate($default_str, $size - 1, $new_combin);
+	}
+	function show()
+	{
+		$lowercase = str_split($this->str);
+		$show = $this->placement_generate($lowercase, $this->leng);
+		foreach ($show as $arr)
+		{
+			echo $arr."<br>";
+		}
+	}
+	function __destruct() { }
+}
+
+$str = "123";
+$leng = 2;
+
+$combine = new Combin ($str, $leng);
+$combine -> placement();
+$combine -> show();
+?>
